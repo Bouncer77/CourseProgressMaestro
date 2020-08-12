@@ -1,0 +1,24 @@
+.project
+*.iml
+.idea/
+.settings/
+.classpath
+
+# For windows temp files
+~*
+*~
+
+# For logs
+/*.log
+
+**/out/
+*/out/
+out/
+build/
+/build/
+dependency-reduced-pom.xml
+target/
+/classes/
+/out/
+/test/cloud-test/build/
+test-output/
