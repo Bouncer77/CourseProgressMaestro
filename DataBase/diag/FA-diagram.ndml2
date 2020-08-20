@@ -1046,49 +1046,6 @@
           },
           {
             "objectType": "Table_LOGICAL",
-            "name": "Курс / E4",
-            "comment": "",
-            "oldName": "",
-            "fields": [
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "id",
-                "type": "INT",
-                "length": 0,
-                "decimals": 0,
-                "isNullable": false,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "",
-                "oldName": "id"
-              },
-              {
-                "objectType": "TableField_LOGICAL",
-                "name": "название_курса",
-                "type": "CHAR VARYING",
-                "length": 255,
-                "decimals": 0,
-                "isNullable": false,
-                "defaultType": "None",
-                "defaultValue": "",
-                "comment": "",
-                "oldName": "название_курса"
-              }
-            ],
-            "foreignKeys": [],
-            "indexes": [],
-            "uniques": [],
-            "primaryKey": {
-              "objectType": "PrimaryKey_LOGICAL",
-              "name": "",
-              "fields": [
-                "id"
-              ],
-              "oldName": ""
-            }
-          },
-          {
-            "objectType": "Table_LOGICAL",
             "name": "Онлайн курс / E2",
             "comment": "",
             "oldName": "",
@@ -2041,6 +1998,158 @@
               ],
               "oldName": ""
             }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "Вопрос / E26",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "id",
+                "type": "INT",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "id_course",
+                "type": "INT",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "id_course"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "вопрос",
+                "type": "CHAR VARYING",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "вопрос"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "ответ",
+                "type": "CHAR VARYING",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "ответ"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "подсказка",
+                "type": "CHAR VARYING",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "подсказка"
+              }
+            ],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "состоит",
+                "fields": [
+                  "id_course"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "Онлайн курс / E2",
+                "referencedFields": [
+                  "id"
+                ],
+                "sourceCardinality": "ZeroOrManyRelationship",
+                "targetCardinality": "OneAndOnlyOneRelationship",
+                "comment": "",
+                "oldName": ""
+              }
+            ],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "id",
+                "id_course"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "Курс / E4",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "id",
+                "type": "INT",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "название_курса",
+                "type": "CHAR VARYING",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "название_курса"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "описание_курса",
+                "type": "CHAR VARYING",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "описание_курса"
+              }
+            ],
+            "foreignKeys": [],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "id"
+              ],
+              "oldName": ""
+            }
           }
         ]
       }
@@ -2387,7 +2496,7 @@
           "x": 60,
           "y": 1430,
           "width": 200,
-          "height": 130,
+          "height": 160,
           "isBold": false,
           "titleColor": {
             "r": 55,
@@ -2452,6 +2561,22 @@
           "y": 940,
           "width": 200,
           "height": 130,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "Default",
+          "tableName": "Вопрос / E26",
+          "x": 50,
+          "y": 480,
+          "width": 160,
+          "height": 140,
           "isBold": false,
           "titleColor": {
             "r": 55,
@@ -2568,7 +2693,7 @@
             }
           ],
           "label": {
-            "x": 710,
+            "x": 720,
             "y": 170,
             "width": 50,
             "height": 30,
@@ -3022,8 +3147,8 @@
             }
           ],
           "label": {
-            "x": 198,
-            "y": 105,
+            "x": 200,
+            "y": 120,
             "width": 53,
             "height": 30,
             "fontName": "Arial Unicode MS",
@@ -3639,6 +3764,48 @@
             "x": 500,
             "y": 770,
             "width": 75,
+            "height": 30,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": true
+          }
+        },
+        {
+          "name": "состоит",
+          "sourceTableName": "Вопрос / E26",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 225,
+              "y": 550
+            },
+            {
+              "x": 250,
+              "y": 550
+            },
+            {
+              "x": 250,
+              "y": 550
+            },
+            {
+              "x": 255,
+              "y": 550
+            }
+          ],
+          "label": {
+            "x": 215,
+            "y": 512,
+            "width": 58,
             "height": 30,
             "fontName": "Arial Unicode MS",
             "fontSize": 14,
