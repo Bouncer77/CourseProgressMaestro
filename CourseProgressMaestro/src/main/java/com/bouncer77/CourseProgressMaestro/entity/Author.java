@@ -1,25 +1,33 @@
 package com.bouncer77.CourseProgressMaestro.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
 /**
  * @author Kosenkov Ivan
  * Created by Kosenkov Ivan on 24.08.2020
  */
 
+@Entity
 public class Author {
 
+    @Id
+    @GeneratedValue
     private int id;
-    private String first_name;
-    private String last_name;
-    private String second_name;
+
+    private String firstName;
+    private String lastName;
+    private String secondName;
 
     public Author() {
     }
 
-    public Author(int id, String first_name, String last_name, String second_name) {
+    public Author(String firstName, String lastName, String secondName) {
         this.id = id;
-        this.first_name = first_name;
-        this.last_name = last_name;
-        this.second_name = second_name;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.secondName = secondName;
     }
 
     public int getId() {
@@ -30,37 +38,37 @@ public class Author {
         this.id = id;
     }
 
-    public String getFirst_name() {
-        return first_name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setFirst_name(String first_name) {
-        this.first_name = first_name;
+    public void setFirstName(String first_name) {
+        this.firstName = first_name;
     }
 
-    public String getLast_name() {
-        return last_name;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setLast_name(String last_name) {
-        this.last_name = last_name;
+    public void setLastName(String last_name) {
+        this.lastName = last_name;
     }
 
-    public String getSecond_name() {
-        return second_name;
+    public String getSecondName() {
+        return secondName;
     }
 
-    public void setSecond_name(String second_name) {
-        this.second_name = second_name;
+    public void setSecondName(String second_name) {
+        this.secondName = second_name;
     }
 
     @Override
     public String toString() {
         return "\nAuthor{" +
                 "id = " + id +
-                ", first_name = " + first_name +
-                ", last_name = " + last_name +
-                ", second_name = " + second_name +
+                ", first_name = " + firstName +
+                ", last_name = " + lastName +
+                ", second_name = " + secondName +
                 "}";
     }
 }

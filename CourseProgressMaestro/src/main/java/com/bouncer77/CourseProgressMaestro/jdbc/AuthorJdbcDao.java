@@ -32,8 +32,8 @@ public class AuthorJdbcDao {
                 "(id, first_name, last_name, second_name)" +
                 "values (?,?,?,?)",
                 new Object[] {
-                        author.getId(), author.getFirst_name(),
-                        author.getLast_name(), author.getSecond_name()
+                        author.getId(), author.getFirstName(),
+                        author.getLastName(), author.getSecondName()
                 });
 
     }
