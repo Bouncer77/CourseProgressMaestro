@@ -1,0 +1,609 @@
+{
+  "paper": {
+    "name": "A4",
+    "leftMargin": 0.5,
+    "rightMargin": 0.5,
+    "topMargin": 0.5,
+    "bottomMargin": 0.5,
+    "isPortriat": true
+  },
+  "modelVersion": 2.01,
+  "defaultSchema": "Default",
+  "server": {
+    "objectType": "Server_CONCEPTUAL",
+    "name": "Default",
+    "schemas": [
+      {
+        "objectType": "Schema_CONCEPTUAL",
+        "name": "Default",
+        "tables": [
+          {
+            "objectType": "Table_CONCEPTUAL",
+            "name": "Книга / E1",
+            "oldName": "",
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_CONCEPTUAL",
+                "name": "входит / содержит / R1_2",
+                "referencedSchema": "Default",
+                "referencedTable": "Курс для чтения / E2",
+                "sourceCardinality": "OneOrManyRelationship",
+                "targetCardinality": "ZeroOrManyRelationship",
+                "oldName": ""
+              }
+            ]
+          },
+          {
+            "objectType": "Table_CONCEPTUAL",
+            "name": "Онлайн курс / E2",
+            "oldName": "",
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_CONCEPTUAL",
+                "name": "входит / содержит",
+                "referencedSchema": "Default",
+                "referencedTable": "Курс / E4",
+                "sourceCardinality": "ZeroOrManyRelationship",
+                "targetCardinality": "ZeroOrManyRelationship",
+                "oldName": ""
+              }
+            ]
+          },
+          {
+            "objectType": "Table_CONCEPTUAL",
+            "name": "Преподаватель / E5",
+            "oldName": "",
+            "foreignKeys": []
+          },
+          {
+            "objectType": "Table_CONCEPTUAL",
+            "name": "Студент / E6",
+            "oldName": "",
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_CONCEPTUAL",
+                "name": "имеет",
+                "referencedSchema": "Default",
+                "referencedTable": "Занятие по книге / E7",
+                "sourceCardinality": "OneAndOnlyOneRelationship",
+                "targetCardinality": "ZeroOrManyRelationship",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_CONCEPTUAL",
+                "name": "имеет",
+                "referencedSchema": "Default",
+                "referencedTable": "Занятие по онлайн курсу / E7",
+                "sourceCardinality": "OneAndOnlyOneRelationship",
+                "targetCardinality": "ZeroOrManyRelationship",
+                "oldName": ""
+              }
+            ]
+          },
+          {
+            "objectType": "Table_CONCEPTUAL",
+            "name": "Курс для чтения / E2",
+            "oldName": "",
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_CONCEPTUAL",
+                "name": "входит / содержит / R2_4",
+                "referencedSchema": "Default",
+                "referencedTable": "Курс / E4",
+                "sourceCardinality": "ZeroOrManyRelationship",
+                "targetCardinality": "ZeroOrManyRelationship",
+                "oldName": ""
+              }
+            ]
+          },
+          {
+            "objectType": "Table_CONCEPTUAL",
+            "name": "Тэг / E3",
+            "oldName": "",
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_CONCEPTUAL",
+                "name": "принадлежит / имеет / R3_4",
+                "referencedSchema": "Default",
+                "referencedTable": "Курс / E4",
+                "sourceCardinality": "OneOrManyRelationship",
+                "targetCardinality": "ZeroOrManyRelationship",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_CONCEPTUAL",
+                "name": "принадлежит / имеет / R3_6",
+                "referencedSchema": "Default",
+                "referencedTable": "Пользователь / E6",
+                "sourceCardinality": "ZeroOrManyRelationship",
+                "targetCardinality": "ZeroOrManyRelationship",
+                "oldName": ""
+              }
+            ]
+          },
+          {
+            "objectType": "Table_CONCEPTUAL",
+            "name": "Курс / E4",
+            "oldName": "",
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_CONCEPTUAL",
+                "name": "имплементируется / R4_5",
+                "referencedSchema": "Default",
+                "referencedTable": "Экземпляр курса / E5",
+                "sourceCardinality": "OneAndOnlyOneRelationship",
+                "targetCardinality": "ZeroOrManyRelationship",
+                "oldName": ""
+              }
+            ]
+          },
+          {
+            "objectType": "Table_CONCEPTUAL",
+            "name": "Экземпляр курса / E5",
+            "oldName": "",
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_CONCEPTUAL",
+                "name": "преподается / обучается / R5_6",
+                "referencedSchema": "Default",
+                "referencedTable": "Пользователь / E6",
+                "sourceCardinality": "ZeroOrManyRelationship",
+                "targetCardinality": "ZeroOrManyRelationship",
+                "oldName": ""
+              }
+            ]
+          },
+          {
+            "objectType": "Table_CONCEPTUAL",
+            "name": "Пользователь / E6",
+            "oldName": "",
+            "foreignKeys": []
+          },
+          {
+            "objectType": "Table_CONCEPTUAL",
+            "name": "Занятие по книге / E7",
+            "oldName": "",
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_CONCEPTUAL",
+                "name": "имеет / принадлежит / R6_7",
+                "referencedSchema": "Default",
+                "referencedTable": "Пользователь / E6",
+                "sourceCardinality": "ZeroOrManyRelationship",
+                "targetCardinality": "OneAndOnlyOneRelationship",
+                "oldName": ""
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "diagrams": [
+    {
+      "name": "ER-diagram",
+      "paperWidth": 1,
+      "paperHeight": 1,
+      "tableFont": "Times New Roman",
+      "tableFontSize": 14,
+      "isBalckWhite": true,
+      "showDBSchemaName": false,
+      "showViewRelations": true,
+      "notation": "idef1x",
+      "showFieldComment": false,
+      "showTableComment": false,
+      "shapes": [
+        {
+          "type": "table",
+          "schemaName": "Default",
+          "tableName": "Книга / E1",
+          "x": 750,
+          "y": 100,
+          "width": 200,
+          "height": 100,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "Default",
+          "tableName": "Курс для чтения / E2",
+          "x": 750,
+          "y": 270,
+          "width": 200,
+          "height": 100,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "Default",
+          "tableName": "Курс / E4",
+          "x": 540,
+          "y": 470,
+          "width": 200,
+          "height": 100,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "Default",
+          "tableName": "Занятие по книге / E7",
+          "x": 540,
+          "y": 980,
+          "width": 200,
+          "height": 100,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "Default",
+          "tableName": "Экземпляр курса / E5",
+          "x": 540,
+          "y": 650,
+          "width": 200,
+          "height": 100,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "Default",
+          "tableName": "Пользователь / E6",
+          "x": 540,
+          "y": 840,
+          "width": 200,
+          "height": 100,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "Default",
+          "tableName": "Тэг / E3",
+          "x": 120,
+          "y": 470,
+          "width": 200,
+          "height": 100,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        }
+      ],
+      "layers": [],
+      "relations": [
+        {
+          "name": "входит / содержит / R1_2",
+          "sourceTableName": "Книга / E1",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 850,
+              "y": 215
+            },
+            {
+              "x": 850,
+              "y": 250
+            },
+            {
+              "x": 850,
+              "y": 260
+            },
+            {
+              "x": 850,
+              "y": 255
+            }
+          ],
+          "label": {
+            "x": 860,
+            "y": 220,
+            "width": 177,
+            "height": 30,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": true
+          }
+        },
+        {
+          "name": "входит / содержит / R2_4",
+          "sourceTableName": "Курс для чтения / E2",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 850,
+              "y": 385
+            },
+            {
+              "x": 850,
+              "y": 400
+            },
+            {
+              "x": 690,
+              "y": 400
+            },
+            {
+              "x": 690,
+              "y": 455
+            }
+          ],
+          "label": {
+            "x": 660,
+            "y": 370,
+            "width": 177,
+            "height": 30,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": true
+          }
+        },
+        {
+          "name": "принадлежит / имеет / R3_4",
+          "sourceTableName": "Тэг / E3",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 335,
+              "y": 520
+            },
+            {
+              "x": 490,
+              "y": 520
+            },
+            {
+              "x": 490,
+              "y": 520
+            },
+            {
+              "x": 525,
+              "y": 520
+            }
+          ],
+          "label": {
+            "x": 340,
+            "y": 490,
+            "width": 193,
+            "height": 30,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": true
+          }
+        },
+        {
+          "name": "принадлежит / имеет / R3_6",
+          "sourceTableName": "Тэг / E3",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 260,
+              "y": 585
+            },
+            {
+              "x": 260,
+              "y": 890
+            },
+            {
+              "x": 460,
+              "y": 890
+            },
+            {
+              "x": 525,
+              "y": 890
+            }
+          ],
+          "label": {
+            "x": 280,
+            "y": 860,
+            "width": 193,
+            "height": 30,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": true
+          }
+        },
+        {
+          "name": "имеет / принадлежит / R6_7",
+          "sourceTableName": "Занятие по книге / E7",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 640,
+              "y": 965
+            },
+            {
+              "x": 640,
+              "y": 1050
+            },
+            {
+              "x": 640,
+              "y": 1050
+            },
+            {
+              "x": 640,
+              "y": 955
+            }
+          ],
+          "label": {
+            "x": 670,
+            "y": 930,
+            "width": 193,
+            "height": 30,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": true
+          }
+        },
+        {
+          "name": "имплементируется / R4_5",
+          "sourceTableName": "Курс / E4",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 640,
+              "y": 585
+            },
+            {
+              "x": 640,
+              "y": 610
+            },
+            {
+              "x": 640,
+              "y": 610
+            },
+            {
+              "x": 640,
+              "y": 635
+            }
+          ],
+          "label": {
+            "x": 648,
+            "y": 575,
+            "width": 175,
+            "height": 30,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": true
+          }
+        },
+        {
+          "name": "преподается / обучается / R5_6",
+          "sourceTableName": "Экземпляр курса / E5",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 640,
+              "y": 765
+            },
+            {
+              "x": 640,
+              "y": 800
+            },
+            {
+              "x": 640,
+              "y": 800
+            },
+            {
+              "x": 640,
+              "y": 825
+            }
+          ],
+          "label": {
+            "x": 650,
+            "y": 780,
+            "width": 215,
+            "height": 30,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": true
+          }
+        }
+      ],
+      "viewRelations": []
+    }
+  ]
+}

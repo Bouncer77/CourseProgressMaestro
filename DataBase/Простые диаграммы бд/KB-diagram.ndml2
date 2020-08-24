@@ -1,0 +1,1987 @@
+{
+  "paper": {
+    "name": "A4",
+    "leftMargin": 0.5,
+    "rightMargin": 0.5,
+    "topMargin": 0.5,
+    "bottomMargin": 0.5,
+    "isPortriat": true
+  },
+  "modelVersion": 2.01,
+  "defaultSchema": "Default",
+  "server": {
+    "objectType": "Server_LOGICAL",
+    "name": "Default",
+    "schemas": [
+      {
+        "objectType": "Schema_LOGICAL",
+        "name": "Default",
+        "tables": [
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "Курс / E4",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "id",
+                "type": "INT",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "id"
+              }
+            ],
+            "foreignKeys": [],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "id"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "1 Занятие по онлайн курсу / E7",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "id",
+                "type": "INT",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "id_student",
+                "type": "INT",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "id_student"
+              }
+            ],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "имеет",
+                "fields": [
+                  "id_student"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "Студент / E6",
+                "referencedFields": [
+                  "id"
+                ],
+                "sourceCardinality": "ZeroOrManyRelationship",
+                "targetCardinality": "NoneRelationship",
+                "comment": "",
+                "oldName": ""
+              }
+            ],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "id",
+                "id_student"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "1 Занятие по книге / E8",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "date",
+                "type": "DATE",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "date"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "id_student",
+                "type": "INT",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "id_student"
+              }
+            ],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "имеет",
+                "fields": [
+                  "id_student"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "Студент / E6",
+                "referencedFields": [
+                  "id"
+                ],
+                "sourceCardinality": "ZeroOrManyRelationship",
+                "targetCardinality": "OneAndOnlyOneRelationship",
+                "comment": "",
+                "oldName": ""
+              }
+            ],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "date",
+                "id_student"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "Курс для чтения / E2",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "id",
+                "type": "INT",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "id"
+              }
+            ],
+            "foreignKeys": [],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "id"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "Автор / E8",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "id",
+                "type": "INT",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "serial",
+                "oldName": "id"
+              }
+            ],
+            "foreignKeys": [],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "id"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "Тэг / E3",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "id",
+                "type": "INT",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "serial",
+                "oldName": "id"
+              }
+            ],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "отмечает / R3_6",
+                "fields": [
+                  "id"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "Тэг в навыках Преподавателя / E14",
+                "referencedFields": [
+                  "id_tag"
+                ],
+                "sourceCardinality": "OneAndOnlyOneRelationship",
+                "targetCardinality": "ZeroOrManyRelationship",
+                "comment": "",
+                "oldName": ""
+              }
+            ],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "id"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "Занятие по книге / E7",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "date",
+                "type": "DATE",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "date"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "id_student",
+                "type": "INT",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "id_student"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "id_book",
+                "type": "INT",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "id_book"
+              }
+            ],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "имеет",
+                "fields": [
+                  "id_book"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "Книга / E1",
+                "referencedFields": [
+                  "id"
+                ],
+                "sourceCardinality": "ZeroOrManyRelationship",
+                "targetCardinality": "OneAndOnlyOneRelationship",
+                "comment": "",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "имеет / R6_7",
+                "fields": [
+                  "id_student"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "Пользователь / E6",
+                "referencedFields": [
+                  "id"
+                ],
+                "sourceCardinality": "ZeroOrManyRelationship",
+                "targetCardinality": "OneAndOnlyOneRelationship",
+                "comment": "",
+                "oldName": ""
+              }
+            ],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "date",
+                "id_student",
+                "id_book"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "Автора в составе авторов книги / E9",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "id_author",
+                "type": "INT",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "id_author"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "id_book",
+                "type": "INT",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "id_book"
+              }
+            ],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "входит в состав / R8_1",
+                "fields": [
+                  "id_author"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "Автор / E8",
+                "referencedFields": [
+                  "id"
+                ],
+                "sourceCardinality": "ZeroOrManyRelationship",
+                "targetCardinality": "OneAndOnlyOneRelationship",
+                "comment": "",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "содержит / R1_8",
+                "fields": [
+                  "id_book"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "Книга / E1",
+                "referencedFields": [
+                  "id"
+                ],
+                "sourceCardinality": "OneOrManyRelationship",
+                "targetCardinality": "NoneRelationship",
+                "comment": "",
+                "oldName": ""
+              }
+            ],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "id_author",
+                "id_book"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "Тэг в составе Книги / E10",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "id_tag",
+                "type": "INT",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "id_tag"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "id_book",
+                "type": "INT",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "id_book"
+              }
+            ],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "отмечает / R3_10",
+                "fields": [
+                  "id_tag"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "Тэг / E3",
+                "referencedFields": [
+                  "id"
+                ],
+                "sourceCardinality": "ZeroOrManyRelationship",
+                "targetCardinality": "OneAndOnlyOneRelationship",
+                "comment": "",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "содержит / R1_3",
+                "fields": [
+                  "id_book"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "Книга / E1",
+                "referencedFields": [
+                  "id"
+                ],
+                "sourceCardinality": "OneOrManyRelationship",
+                "targetCardinality": "OneAndOnlyOneRelationship",
+                "comment": "",
+                "oldName": ""
+              }
+            ],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "id_tag",
+                "id_book"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "Курс для чтения в составе Курса / E12",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "id_reading_course",
+                "type": "INT",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "id_reading_course"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "id_course",
+                "type": "INT",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "id_course"
+              }
+            ],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "входит/ R2_4",
+                "fields": [
+                  "id_reading_course"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "Курс для чтения / E2",
+                "referencedFields": [],
+                "sourceCardinality": "ZeroOrManyRelationship",
+                "targetCardinality": "OneAndOnlyOneRelationship",
+                "comment": "",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "содержит / R4_2",
+                "fields": [
+                  "id_course"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "Курс / E4",
+                "referencedFields": [],
+                "sourceCardinality": "ZeroOrManyRelationship",
+                "targetCardinality": "OneAndOnlyOneRelationship",
+                "comment": "",
+                "oldName": ""
+              }
+            ],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "id_reading_course",
+                "id_course"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "Преподаватель ведет Экземпляр курса / E13",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "id_teacher",
+                "type": "INT",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "id_teacher"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "id_instance_course",
+                "type": "INT",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "id_instance_course"
+              }
+            ],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "преподается / R5_6",
+                "fields": [
+                  "id_instance_course"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "Экземпляр курса / E5",
+                "referencedFields": [
+                  "id"
+                ],
+                "sourceCardinality": "ZeroOrManyRelationship",
+                "targetCardinality": "OneAndOnlyOneRelationship",
+                "comment": "",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "преподает / R6_5",
+                "fields": [
+                  "id_teacher"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "Пользователь / E6",
+                "referencedFields": [
+                  "id"
+                ],
+                "sourceCardinality": "ZeroOrManyRelationship",
+                "targetCardinality": "OneAndOnlyOneRelationship",
+                "comment": "",
+                "oldName": ""
+              }
+            ],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "id_teacher",
+                "id_instance_course"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "Запись на курс / E14",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "id_course_instance",
+                "type": "INT",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "id_course_instance"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "id_student",
+                "type": "INT",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "id_student"
+              }
+            ],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "содержит / R5_6",
+                "fields": [
+                  "id_course_instance"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "Экземпляр курса / E5",
+                "referencedFields": [
+                  "id"
+                ],
+                "sourceCardinality": "ZeroOrManyRelationship",
+                "targetCardinality": "OneAndOnlyOneRelationship",
+                "comment": "",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "обучается / R6_5",
+                "fields": [
+                  "id_student"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "Пользователь / E6",
+                "referencedFields": [
+                  "id"
+                ],
+                "sourceCardinality": "ZeroOrManyRelationship",
+                "targetCardinality": "OneAndOnlyOneRelationship",
+                "comment": "",
+                "oldName": ""
+              }
+            ],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "id_course_instance",
+                "id_student"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "Тэг в навыках Преподавателя / E14",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "id_tag",
+                "type": "INT",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "id_tag"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "id_teacher",
+                "type": "INT",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "id_teacher"
+              }
+            ],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "умеет преподавать / R6_3",
+                "fields": [
+                  "id_teacher"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "Пользователь / E6",
+                "referencedFields": [
+                  "id"
+                ],
+                "sourceCardinality": "ZeroOrManyRelationship",
+                "targetCardinality": "OneAndOnlyOneRelationship",
+                "comment": "",
+                "oldName": ""
+              }
+            ],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "id_tag",
+                "id_teacher"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "Книга / E1",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "id",
+                "type": "INT",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "serial",
+                "oldName": "id"
+              }
+            ],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "входит / R1_7",
+                "fields": [
+                  "id"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "Занятие по книге / E7",
+                "referencedFields": [
+                  "id_book"
+                ],
+                "sourceCardinality": "OneAndOnlyOneRelationship",
+                "targetCardinality": "ZeroOrManyRelationship",
+                "comment": "",
+                "oldName": ""
+              }
+            ],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "id"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "Книга в составе Курса для чтения / E11",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "id_book",
+                "type": "INT",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "id_book"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "id_reading_course",
+                "type": "INT",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "id_reading_course"
+              }
+            ],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "входит / R1_2",
+                "fields": [
+                  "id_book"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "Книга / E1",
+                "referencedFields": [
+                  "id"
+                ],
+                "sourceCardinality": "ZeroOrManyRelationship",
+                "targetCardinality": "OneAndOnlyOneRelationship",
+                "comment": "",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "содержит / R2_1",
+                "fields": [
+                  "id_reading_course"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "Курс для чтения / E2",
+                "referencedFields": [
+                  "id"
+                ],
+                "sourceCardinality": "OneOrManyRelationship",
+                "targetCardinality": "OneAndOnlyOneRelationship",
+                "comment": "",
+                "oldName": ""
+              }
+            ],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "id_book",
+                "id_reading_course"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "Экземпляр курса / E5",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "id",
+                "type": "INTEGER",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "id"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "id_course",
+                "type": "INT",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "id_course"
+              }
+            ],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "имплементируется / R4_5",
+                "fields": [
+                  "id_course"
+                ],
+                "referencedSchema": "Default",
+                "referencedTable": "Курс / E4",
+                "referencedFields": [
+                  "id"
+                ],
+                "sourceCardinality": "ZeroOrManyRelationship",
+                "targetCardinality": "OneAndOnlyOneRelationship",
+                "comment": "",
+                "oldName": ""
+              }
+            ],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "id",
+                "id_course"
+              ],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "Пользователь / E6",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "id",
+                "type": "INT",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "id"
+              }
+            ],
+            "foreignKeys": [],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [
+                "id"
+              ],
+              "oldName": ""
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "diagrams": [
+    {
+      "name": "KB-diagram",
+      "paperWidth": 1,
+      "paperHeight": 1,
+      "tableFont": "Times New Roman",
+      "tableFontSize": 14,
+      "isBalckWhite": true,
+      "showDBSchemaName": false,
+      "showViewRelations": true,
+      "notation": "idef1x",
+      "showFieldComment": false,
+      "showTableComment": false,
+      "shapes": [
+        {
+          "type": "table",
+          "schemaName": "Default",
+          "tableName": "Книга / E1",
+          "x": 800,
+          "y": 70,
+          "width": 280,
+          "height": 120,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "Default",
+          "tableName": "Курс для чтения / E2",
+          "x": 800,
+          "y": 430,
+          "width": 280,
+          "height": 100,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "Default",
+          "tableName": "Курс / E4",
+          "x": 810,
+          "y": 750,
+          "width": 280,
+          "height": 100,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "Default",
+          "tableName": "Курс для чтения в составе Курса / E12",
+          "x": 800,
+          "y": 600,
+          "width": 290,
+          "height": 100,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "Default",
+          "tableName": "Книга в составе Курса для чтения / E11",
+          "x": 800,
+          "y": 270,
+          "width": 290,
+          "height": 100,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "Default",
+          "tableName": "Автор / E8",
+          "x": 40,
+          "y": 70,
+          "width": 150,
+          "height": 100,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "Default",
+          "tableName": "Тэг / E3",
+          "x": 40,
+          "y": 180,
+          "width": 150,
+          "height": 100,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "Default",
+          "tableName": "Экземпляр курса / E5",
+          "x": 790,
+          "y": 920,
+          "width": 300,
+          "height": 120,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "Default",
+          "tableName": "Запись на курс / E14",
+          "x": 790,
+          "y": 1100,
+          "width": 300,
+          "height": 130,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "Default",
+          "tableName": "Автора в составе авторов книги / E9",
+          "x": 350,
+          "y": 70,
+          "width": 270,
+          "height": 100,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "Default",
+          "tableName": "Занятие по книге / E7",
+          "x": 800,
+          "y": 1460,
+          "width": 290,
+          "height": 130,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "Default",
+          "tableName": "Тэг в составе Книги / E10",
+          "x": 350,
+          "y": 180,
+          "width": 270,
+          "height": 110,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "Default",
+          "tableName": "Пользователь / E6",
+          "x": 810,
+          "y": 1280,
+          "width": 280,
+          "height": 100,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "Default",
+          "tableName": "Преподаватель ведет Экземпляр курса / E13",
+          "x": 290,
+          "y": 930,
+          "width": 350,
+          "height": 100,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "Default",
+          "tableName": "Тэг в навыках Преподавателя / E14",
+          "x": 50,
+          "y": 420,
+          "width": 260,
+          "height": 90,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        }
+      ],
+      "layers": [],
+      "relations": [
+        {
+          "name": "входит / R1_2",
+          "sourceTableName": "Книга в составе Курса для чтения / E11",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 870,
+              "y": 255
+            },
+            {
+              "x": 870,
+              "y": 240
+            },
+            {
+              "x": 870,
+              "y": 240
+            },
+            {
+              "x": 870,
+              "y": 205
+            }
+          ],
+          "label": {
+            "x": 890,
+            "y": 220,
+            "width": 99,
+            "height": 30,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": true
+          }
+        },
+        {
+          "name": "содержит / R2_1",
+          "sourceTableName": "Книга в составе Курса для чтения / E11",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 870,
+              "y": 385
+            },
+            {
+              "x": 870,
+              "y": 420
+            },
+            {
+              "x": 870,
+              "y": 420
+            },
+            {
+              "x": 870,
+              "y": 415
+            }
+          ],
+          "label": {
+            "x": 880,
+            "y": 390,
+            "width": 117,
+            "height": 30,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": true
+          }
+        },
+        {
+          "name": "содержит / R4_2",
+          "sourceTableName": "Курс для чтения в составе Курса / E12",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 880,
+              "y": 715
+            },
+            {
+              "x": 880,
+              "y": 730
+            },
+            {
+              "x": 880,
+              "y": 730
+            },
+            {
+              "x": 880,
+              "y": 735
+            }
+          ],
+          "label": {
+            "x": 890,
+            "y": 710,
+            "width": 117,
+            "height": 30,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": true
+          }
+        },
+        {
+          "name": "входит/ R2_4",
+          "sourceTableName": "Курс для чтения в составе Курса / E12",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 870,
+              "y": 585
+            },
+            {
+              "x": 870,
+              "y": 545
+            }
+          ],
+          "label": {
+            "x": 880,
+            "y": 550,
+            "width": 94,
+            "height": 30,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": true
+          }
+        },
+        {
+          "name": "имплементируется / R4_5",
+          "sourceTableName": "Экземпляр курса / E5",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 880,
+              "y": 905
+            },
+            {
+              "x": 880,
+              "y": 870
+            },
+            {
+              "x": 880,
+              "y": 870
+            },
+            {
+              "x": 880,
+              "y": 865
+            }
+          ],
+          "label": {
+            "x": 890,
+            "y": 870,
+            "width": 175,
+            "height": 30,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": true
+          }
+        },
+        {
+          "name": "содержит / R5_6",
+          "sourceTableName": "Запись на курс / E14",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 890,
+              "y": 1085
+            },
+            {
+              "x": 890,
+              "y": 1070
+            },
+            {
+              "x": 890,
+              "y": 1070
+            },
+            {
+              "x": 890,
+              "y": 1055
+            }
+          ],
+          "label": {
+            "x": 900,
+            "y": 1050,
+            "width": 117,
+            "height": 30,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": true
+          }
+        },
+        {
+          "name": "входит в состав / R8_1",
+          "sourceTableName": "Автора в составе авторов книги / E9",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 335,
+              "y": 130
+            },
+            {
+              "x": 290,
+              "y": 130
+            },
+            {
+              "x": 205,
+              "y": 130
+            }
+          ],
+          "label": {
+            "x": 190,
+            "y": 100,
+            "width": 160,
+            "height": 30,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": true
+          }
+        },
+        {
+          "name": "отмечает / R3_10",
+          "sourceTableName": "Тэг в составе Книги / E10",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 335,
+              "y": 240
+            },
+            {
+              "x": 400,
+              "y": 240
+            },
+            {
+              "x": 400,
+              "y": 240
+            },
+            {
+              "x": 205,
+              "y": 240
+            }
+          ],
+          "label": {
+            "x": 210,
+            "y": 210,
+            "width": 121,
+            "height": 30,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": true
+          }
+        },
+        {
+          "name": "содержит / R1_8",
+          "sourceTableName": "Автора в составе авторов книги / E9",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 635,
+              "y": 130
+            },
+            {
+              "x": 640,
+              "y": 130
+            },
+            {
+              "x": 785,
+              "y": 130
+            }
+          ],
+          "label": {
+            "x": 670,
+            "y": 100,
+            "width": 117,
+            "height": 30,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": true
+          }
+        },
+        {
+          "name": "содержит / R1_3",
+          "sourceTableName": "Тэг в составе Книги / E10",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 635,
+              "y": 240
+            },
+            {
+              "x": 760,
+              "y": 240
+            },
+            {
+              "x": 760,
+              "y": 150
+            },
+            {
+              "x": 785,
+              "y": 150
+            }
+          ],
+          "label": {
+            "x": 640,
+            "y": 210,
+            "width": 117,
+            "height": 30,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": true
+          }
+        },
+        {
+          "name": "обучается / R6_5",
+          "sourceTableName": "Запись на курс / E14",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 890,
+              "y": 1245
+            },
+            {
+              "x": 890,
+              "y": 1260
+            },
+            {
+              "x": 890,
+              "y": 1260
+            },
+            {
+              "x": 890,
+              "y": 1265
+            }
+          ],
+          "label": {
+            "x": 900,
+            "y": 1240,
+            "width": 119,
+            "height": 30,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": true
+          }
+        },
+        {
+          "name": "отмечает / R3_6",
+          "sourceTableName": "Тэг / E3",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 120,
+              "y": 295
+            },
+            {
+              "x": 120,
+              "y": 350
+            },
+            {
+              "x": 120,
+              "y": 350
+            },
+            {
+              "x": 120,
+              "y": 405
+            }
+          ],
+          "label": {
+            "x": 130,
+            "y": 340,
+            "width": 113,
+            "height": 30,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": true
+          }
+        },
+        {
+          "name": "преподается / R5_6",
+          "sourceTableName": "Преподаватель ведет Экземпляр курса / E13",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 655,
+              "y": 980
+            },
+            {
+              "x": 715,
+              "y": 980
+            },
+            {
+              "x": 715,
+              "y": 980
+            },
+            {
+              "x": 775,
+              "y": 980
+            }
+          ],
+          "label": {
+            "x": 650,
+            "y": 950,
+            "width": 135,
+            "height": 30,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": true
+          }
+        },
+        {
+          "name": "входит / R1_7",
+          "sourceTableName": "Книга / E1",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 1095,
+              "y": 130
+            },
+            {
+              "x": 1140,
+              "y": 130
+            },
+            {
+              "x": 1140,
+              "y": 1540
+            },
+            {
+              "x": 1105,
+              "y": 1540
+            }
+          ],
+          "label": {
+            "x": 1080,
+            "y": 100,
+            "width": 99,
+            "height": 30,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": true
+          }
+        },
+        {
+          "name": "преподает / R6_5",
+          "sourceTableName": "Преподаватель ведет Экземпляр курса / E13",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 450,
+              "y": 1045
+            },
+            {
+              "x": 450,
+              "y": 1320
+            },
+            {
+              "x": 795,
+              "y": 1320
+            }
+          ],
+          "label": {
+            "x": 670,
+            "y": 1290,
+            "width": 121,
+            "height": 30,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": true
+          }
+        },
+        {
+          "name": "умеет преподавать / R6_3",
+          "sourceTableName": "Тэг в навыках Преподавателя / E14",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 110,
+              "y": 525
+            },
+            {
+              "x": 110,
+              "y": 1360
+            },
+            {
+              "x": 795,
+              "y": 1360
+            }
+          ],
+          "label": {
+            "x": 620,
+            "y": 1330,
+            "width": 178,
+            "height": 30,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": true
+          }
+        },
+        {
+          "name": "имеет / R6_7",
+          "sourceTableName": "Занятие по книге / E7",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 890,
+              "y": 1445
+            },
+            {
+              "x": 890,
+              "y": 1420
+            },
+            {
+              "x": 890,
+              "y": 1420
+            },
+            {
+              "x": 890,
+              "y": 1395
+            }
+          ],
+          "label": {
+            "x": 900,
+            "y": 1410,
+            "width": 92,
+            "height": 30,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": true
+          }
+        }
+      ],
+      "viewRelations": []
+    }
+  ]
+}
