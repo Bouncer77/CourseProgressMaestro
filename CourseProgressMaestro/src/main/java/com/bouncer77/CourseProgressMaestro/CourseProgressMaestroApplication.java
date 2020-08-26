@@ -26,7 +26,7 @@ public class CourseProgressMaestroApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-		/*Author author1 = new Author("Anna", "Andreeva", "Ivanovna");
+		Author author1 = new Author("Anna", "Andreeva", "Ivanovna");
 		Author author2 = new Author( "Olesya", "Andreeva", "Ivanovna");
 		Author author3 = new Author( "Nick", "Anisimov", "Alexandrovich");
 
@@ -34,6 +34,6 @@ public class CourseProgressMaestroApplication implements CommandLineRunner {
 
 		authorRepository.saveAll(authorList);
 
-		System.out.println(authorRepository.findAll());*/
+		System.out.println(authorRepository.findAll());
 	}
 }
