@@ -1,6 +1,8 @@
 package com.bouncer77.CourseProgressMaestro;
 
+import com.bouncer77.CourseProgressMaestro.entity.Passport;
 import com.bouncer77.CourseProgressMaestro.entity.Person;
+import com.bouncer77.CourseProgressMaestro.repository.PassportRepository;
 import com.bouncer77.CourseProgressMaestro.repository.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -25,8 +27,8 @@ public class CourseProgressMaestroApplication implements CommandLineRunner {
 	@Autowired
 	PersonRepository personRepository;
 
-	/*@Autowired
-	PassportRepository passportRepository;*/
+	@Autowired
+	PassportRepository passportRepository;
 
 	@Override
 	public void run(String... args) {
@@ -43,11 +45,11 @@ public class CourseProgressMaestroApplication implements CommandLineRunner {
 		Person anna = new Person("Anna", "Andreeva", "Samara");
 		Person olesya = new Person("Olesya", "Andreeva", "Moscow");
 
-		/*Passport passportAnna = new Passport("111111111");
+		Passport passportAnna = new Passport("111111111");
 		Passport passportOlesya = new Passport("222222222");
 
 		anna.setPassport(passportAnna);
-		olesya.setPassport(passportOlesya);*/
+		olesya.setPassport(passportOlesya);
 
 		List<Person> people = Arrays.asList(anna, olesya);
 		// Casscade.ALL => когда сохраняем people сохраняются и паспорта

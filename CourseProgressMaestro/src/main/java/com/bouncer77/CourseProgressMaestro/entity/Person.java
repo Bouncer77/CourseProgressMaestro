@@ -11,19 +11,18 @@ import javax.persistence.*;
 public class Person {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     private String firstName;
     private String lastName;
     private String address;
 
-    /*@OneToOne(cascade = CascadeType.ALL) // Если удалить Person удалиться и паспорт
-    @JoinColumn(name = "passport_id") // название колонки в таблице Person (FK)
-    private Passport passport;*/
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "passport_id")
+    private Passport passport;
 
-    public Person() {
-    }
+    public Person() { }
 
     public Person(String firstName, String lastName, String address) {
         this.firstName = firstName;
@@ -63,13 +62,13 @@ public class Person {
         this.address = address;
     }
 
-    /*public Passport getPassport() {
+    public Passport getPassport() {
         return passport;
     }
 
     public void setPassport(Passport passport) {
         this.passport = passport;
-    }*/
+    }
 
     @Override
     public String toString() {
@@ -78,7 +77,7 @@ public class Person {
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", address='" + address + '\'' +
-                //", passport=" + passport +
+                ", passport=" + passport +
                 '}';
     }
 }

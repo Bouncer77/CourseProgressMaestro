@@ -15,7 +15,6 @@ public interface AuthorRepository extends JpaRepository<Author, Integer> {
 
     List<Author> findByFirstName(String firstName);
 
-    @Query("select a from Author a order by firstName")
+    @Query("select a from Author a order by a.firstName")
     List<Author> findAllOrderedByFirstName();
-
 }
