@@ -10,6 +10,7 @@ import javax.persistence.*;
 @Entity
 public class Passport {
 
+    // strategy = GenerationType.IDENTITY генерировать уникальные идентификаторы для сущности, а не вообще для всех
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -18,15 +19,23 @@ public class Passport {
     @Column(unique = true, nullable = false)
     private String number;
 
-    @OneToOne(mappedBy = "passport", cascade = {
+
+    // Чтобы не удалить Person после удаления паспорта
+        // Перечисляем все каскады, кроме Remove
+    /*@OneToOne(mappedBy = "passport", cascade = {
             CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST,
             CascadeType.REFRESH
-    })
+    })*/
+    // имя соответствует полю из Person
+    @OneToOne(mappedBy = "passport", cascade = CascadeType.ALL)
     private Person person;
 
-    public Passport() {}
+    public Passport() {
+    }
 
-    public Passport(String number) { this.number = number; }
+    public Passport(String number) {
+        this.number = number;
+    }
 
     public Person getPerson() {
         return person;

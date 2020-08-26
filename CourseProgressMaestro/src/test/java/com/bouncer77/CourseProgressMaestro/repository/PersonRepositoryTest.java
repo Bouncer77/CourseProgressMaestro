@@ -1,6 +1,7 @@
 package com.bouncer77.CourseProgressMaestro.repository;
 
 import com.bouncer77.CourseProgressMaestro.entity.Author;
+import com.bouncer77.CourseProgressMaestro.entity.Passport;
 import com.bouncer77.CourseProgressMaestro.entity.Person;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -24,6 +25,9 @@ public class PersonRepositoryTest {
     @Autowired
     PersonRepository personRepository;
 
+    @Autowired
+    PassportRepository passportRepository;
+
     @Test
     public void findByFirstName() {
 
@@ -40,5 +44,24 @@ public class PersonRepositoryTest {
         assertThat(people).hasSize(2);
         assertThat(people.get(0).getFirstName()).isEqualTo("Anna");
         assertThat(people.get(1).getFirstName()).isEqualTo("Olesya");
+    }
+
+    /*
+    * Если удалить Passport удалиться и Person
+    * */
+    @Test
+    public void deletePassport() {
+        Passport passport = passportRepository.findByNumber("222222222");
+
+        // Если требуется удалить только пасспорт, а Person оставить
+        // passport.getPerson().getPassport().getPerson()....
+        // passport.getPerson().setPassport(null);
+
+        passportRepository.delete(passport);
+        List<Person> people = personRepository.findAll();
+        assertThat(people).hasSize(1);
+
+        List<Passport> passportList = passportRepository.findAll();
+        assertThat(passportList).hasSize(1);
     }
 }
