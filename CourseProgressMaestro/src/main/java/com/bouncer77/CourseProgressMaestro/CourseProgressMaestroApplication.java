@@ -1,8 +1,7 @@
 package com.bouncer77.CourseProgressMaestro;
 
-import com.bouncer77.CourseProgressMaestro.entity.Author;
-import com.bouncer77.CourseProgressMaestro.jdbc.AuthorJdbcDao;
-import com.bouncer77.CourseProgressMaestro.repository.AuthorRepository;
+import com.bouncer77.CourseProgressMaestro.entity.Person;
+import com.bouncer77.CourseProgressMaestro.repository.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -20,20 +19,41 @@ public class CourseProgressMaestroApplication implements CommandLineRunner {
 
 	}
 
+	/*@Autowired
+	AuthorRepository authorRepository;*/
+
 	@Autowired
-	AuthorRepository authorRepository;
+	PersonRepository personRepository;
+
+	/*@Autowired
+	PassportRepository passportRepository;*/
 
 	@Override
-	public void run(String... args) throws Exception {
+	public void run(String... args) {
 
-		Author author1 = new Author("Anna", "Andreeva", "Ivanovna");
+		// Author
+		/*Author author1 = new Author("Anna", "Andreeva", "Ivanovna");
 		Author author2 = new Author( "Olesya", "Andreeva", "Ivanovna");
 		Author author3 = new Author( "Nick", "Anisimov", "Alexandrovich");
-
 		List<Author> authorList = Arrays.asList(author1, author2, author3);
+		authorRepository.saveAll(authorList);*/
 
-		authorRepository.saveAll(authorList);
 
-		System.out.println(authorRepository.findAll());
+		// Person
+		Person anna = new Person("Anna", "Andreeva", "Samara");
+		Person olesya = new Person("Olesya", "Andreeva", "Moscow");
+
+		/*Passport passportAnna = new Passport("111111111");
+		Passport passportOlesya = new Passport("222222222");
+
+		anna.setPassport(passportAnna);
+		olesya.setPassport(passportOlesya);*/
+
+		List<Person> people = Arrays.asList(anna, olesya);
+		// Casscade.ALL => когда сохраняем people сохраняются и паспорта
+		personRepository.saveAll(people);
+		System.out.println("<<<<<<<<<" + personRepository.findAll());
+
+		System.out.println(personRepository.findAll());
 	}
 }
