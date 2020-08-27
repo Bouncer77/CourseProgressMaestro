@@ -2,6 +2,7 @@ package com.bouncer77.CourseProgressMaestro;
 
 import com.bouncer77.CourseProgressMaestro.entity.Passport;
 import com.bouncer77.CourseProgressMaestro.entity.Person;
+import com.bouncer77.CourseProgressMaestro.entity.Phone;
 import com.bouncer77.CourseProgressMaestro.repository.PassportRepository;
 import com.bouncer77.CourseProgressMaestro.repository.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,9 +22,6 @@ public class CourseProgressMaestroApplication implements CommandLineRunner {
 
 	}
 
-	/*@Autowired
-	AuthorRepository authorRepository;*/
-
 	@Autowired
 	PersonRepository personRepository;
 
@@ -33,14 +31,6 @@ public class CourseProgressMaestroApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) {
 
-		// Author
-		/*Author author1 = new Author("Anna", "Andreeva", "Ivanovna");
-		Author author2 = new Author( "Olesya", "Andreeva", "Ivanovna");
-		Author author3 = new Author( "Nick", "Anisimov", "Alexandrovich");
-		List<Author> authorList = Arrays.asList(author1, author2, author3);
-		authorRepository.saveAll(authorList);*/
-
-
 		// Person
 		Person anna = new Person("Anna", "Andreeva", "Samara");
 		Person olesya = new Person("Olesya", "Andreeva", "Moscow");
@@ -48,8 +38,15 @@ public class CourseProgressMaestroApplication implements CommandLineRunner {
 		Passport passportAnna = new Passport("111111111");
 		Passport passportOlesya = new Passport("222222222");
 
+		Phone annaPhone1 = new Phone("89001112233");
+		Phone annaPhone2 = new Phone("89001112244");
+		Phone olesyaPhone1 = new Phone("89001112255");
+
 		anna.setPassport(passportAnna);
 		olesya.setPassport(passportOlesya);
+
+		anna.setPhoneList(Arrays.asList(annaPhone1, annaPhone2));
+		olesya.setPhoneList(Arrays.asList(olesyaPhone1));
 
 		List<Person> people = Arrays.asList(anna, olesya);
 		// Casscade.ALL => когда сохраняем people сохраняются и паспорта

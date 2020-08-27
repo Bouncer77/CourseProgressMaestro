@@ -1,6 +1,9 @@
 package com.bouncer77.CourseProgressMaestro.entity;
 
+import jdk.internal.dynalink.linker.LinkerServices;
+
 import javax.persistence.*;
+import java.util.List;
 
 /**
  * @author Kosenkov Ivan
@@ -17,6 +20,13 @@ public class Person {
     private String firstName;
     private String lastName;
     private String address;
+
+    // Если удаляется Person, то удаляются и все телефоны
+
+    // fetch = FetchType.LAZY - по умолчанию, !не загружает вложенные коллекции в экземпляр класса Person
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "person_id")
+    private List<Phone> phoneList;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "passport_id")
@@ -68,6 +78,14 @@ public class Person {
 
     public void setPassport(Passport passport) {
         this.passport = passport;
+    }
+
+    public List<Phone> getPhoneList() {
+        return phoneList;
+    }
+
+    public void setPhoneList(List<Phone> phoneList) {
+        this.phoneList = phoneList;
     }
 
     @Override
