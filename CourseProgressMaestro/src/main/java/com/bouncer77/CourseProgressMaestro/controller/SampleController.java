@@ -1,13 +1,16 @@
 package com.bouncer77.CourseProgressMaestro.controller;
 
 import com.bouncer77.CourseProgressMaestro.entity.Person;
+import com.bouncer77.CourseProgressMaestro.entity.User;
 import com.bouncer77.CourseProgressMaestro.repository.PersonRepository;
+import com.bouncer77.CourseProgressMaestro.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.*;
 import org.springframework.boot.autoconfigure.*;
 import org.springframework.stereotype.*;
 import org.springframework.web.bind.annotation.*;
 
+import java.sql.SQLException;
 import java.util.List;
 import java.util.Objects;
 
@@ -22,6 +25,9 @@ public class SampleController {
 
     @Autowired
     PersonRepository personRepository;
+
+    @Autowired
+    UserRepository userRepository;
 
     @RequestMapping("/")
     @ResponseBody
@@ -42,6 +48,31 @@ public class SampleController {
             stringBuilder.append(p.toString());
         }
         return stringBuilder.toString();
+    }
+
+    @RequestMapping("/user")
+    @ResponseBody
+    String createUser(String email, String password) {
+
+        if (Objects.isNull(email) || Objects.isNull(password)) {
+            return "Не указана почта или пароль";
+        }
+
+        User user = new User(email, password);
+        System.out.println(user);
+
+        try {
+            userRepository.save(user);
+        } catch (Exception e) {
+            return e.getCause().getCause().getLocalizedMessage();
+        }
+
+
+        System.out.println(userRepository.findAllOrderedByFirstName());
+        return "Пользователь:\n" +
+                "логин: '" + user.getLogin() + "'\n" +
+                "пароль: '" + user.getPassword() + "'\n" +
+                "Успешно создан";
     }
 
     public static void main(String[] args) {

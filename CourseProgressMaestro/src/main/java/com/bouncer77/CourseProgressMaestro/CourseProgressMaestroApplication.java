@@ -1,9 +1,6 @@
 package com.bouncer77.CourseProgressMaestro;
 
-import com.bouncer77.CourseProgressMaestro.entity.Address;
-import com.bouncer77.CourseProgressMaestro.entity.Passport;
-import com.bouncer77.CourseProgressMaestro.entity.Person;
-import com.bouncer77.CourseProgressMaestro.entity.Phone;
+import com.bouncer77.CourseProgressMaestro.entity.*;
 import com.bouncer77.CourseProgressMaestro.repository.PassportRepository;
 import com.bouncer77.CourseProgressMaestro.repository.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
