@@ -3,13 +3,17 @@ package com.bouncer77.CourseProgressMaestro.entity;
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Set;
 
 /**
+ * Простой JavaBean объект представляет Пользователя
+ *
  * @author Kosenkov Ivan
  * Created by Kosenkov Ivan on 27.08.2020
  */
 
 @Entity
+@Table(name = "users")
 public class User {
 
     @Id
@@ -19,7 +23,17 @@ public class User {
     @Column(unique=true)
     private String login;
 
+    @Column(name = "password")
     private String password;
+
+    @Transient
+    private String confirmPassword;
+
+    @ManyToMany
+    @JoinTable(name = "user_roles",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id"))
+    private Set<Role> roles;
 
     @Column(unique=true)
     private String email;
@@ -30,7 +44,7 @@ public class User {
     private String phone;
     //private LocalDate birtday;
     //private LocalDateTime registrationDateTime;
-    private String role; // Student, Teacher, Admin
+    // private String role; // Student, Teacher, Admin
 
     public User() {}
 
@@ -110,12 +124,20 @@ public class User {
         this.phone = phone;
     }
 
-    public String getRole() {
-        return role;
+    public Set<Role> getRoles() {
+        return roles;
     }
 
-    public void setRole(String role) {
-        this.role = role;
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
+    }
+
+    public String getConfirmPassword() {
+        return confirmPassword;
+    }
+
+    public void setConfirmPassword(String confirmPassword) {
+        this.confirmPassword = confirmPassword;
     }
 
     @Override
@@ -129,7 +151,7 @@ public class User {
                 ", firstName='" + firstName + '\'' +
                 ", secondName='" + secondName + '\'' +
                 ", phone='" + phone + '\'' +
-                ", role='" + role + '\'' +
+                // ", role='" + role + '\'' +
                 '}';
     }
 }

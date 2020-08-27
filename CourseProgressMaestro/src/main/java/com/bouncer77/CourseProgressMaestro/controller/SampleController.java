@@ -5,12 +5,12 @@ import com.bouncer77.CourseProgressMaestro.entity.User;
 import com.bouncer77.CourseProgressMaestro.repository.PersonRepository;
 import com.bouncer77.CourseProgressMaestro.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.*;
-import org.springframework.boot.autoconfigure.*;
-import org.springframework.stereotype.*;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.sql.SQLException;
 import java.util.List;
 import java.util.Objects;
 
