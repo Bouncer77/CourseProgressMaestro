@@ -34,10 +34,12 @@ public class CourseProgressMaestroApplication implements CommandLineRunner {
 
 		// Person
 		Person anna = new Person("Anna", "Andreeva");
+		Person anna2 = new Person("Anna", "Potapova");
 		Person olesya = new Person("Olesya", "Andreeva");
 
 		// passport
 		Passport passportAnna = new Passport("111111111");
+		Passport passportAnna2 = new Passport("333333333");
 		Passport passportOlesya = new Passport("222222222");
 
 		// phones
@@ -61,7 +63,9 @@ public class CourseProgressMaestroApplication implements CommandLineRunner {
 		olesya.setPhoneList(Arrays.asList(olesyaPhone1));
 		olesya.setAddress(Arrays.asList(address3, address4));
 
-		List<Person> people = Arrays.asList(anna, olesya);
+		anna2.setPassport(passportAnna2);
+
+		List<Person> people = Arrays.asList(anna, olesya, anna2);
 		// Casscade.ALL => когда сохраняем people сохраняются и паспорта
 		personRepository.saveAll(people);
 		System.out.println("<<<<<<<<<" + personRepository.findAll());

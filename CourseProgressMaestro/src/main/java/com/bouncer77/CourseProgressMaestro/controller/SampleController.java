@@ -9,6 +9,7 @@ import org.springframework.stereotype.*;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Objects;
 
 /**
  * @author Kosenkov Ivan
@@ -26,9 +27,21 @@ public class SampleController {
     @ResponseBody
     String home(String name) {
 
-        List<Person> personList = personRepository.findByFirstName(name);
-        Person anna = personList.get(0);
-        return anna.toString();
+        if (Objects.isNull(name)) {
+            return "В запросе не указано имя пользователя";
+        }
+
+        List<Person> people = personRepository.findByFirstName(name);
+
+        if (people.isEmpty()) {
+            return "Пользователь с именем \\'" + name + "\\' не найден";
+        }
+
+        StringBuilder stringBuilder = new StringBuilder();
+        for (Person p : people) {
+            stringBuilder.append(p.toString());
+        }
+        return stringBuilder.toString();
     }
 
     public static void main(String[] args) {
