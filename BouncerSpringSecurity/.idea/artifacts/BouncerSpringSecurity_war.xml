@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="BouncerSpringSecurity:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>BouncerSpringSecurity</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="CourseProgressMaestro.war">
+      <element id="artifact" artifact-name="BouncerSpringSecurity:war exploded" />
+    </root>
+  </artifact>
+</component>
