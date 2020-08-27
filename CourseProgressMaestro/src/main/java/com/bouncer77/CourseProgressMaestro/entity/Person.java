@@ -19,11 +19,11 @@ public class Person {
 
     private String firstName;
     private String lastName;
-    private String address;
 
     // Если удаляется Person, то удаляются и все телефоны
 
     // fetch = FetchType.LAZY - по умолчанию, !не загружает вложенные коллекции в экземпляр класса Person
+    // Uni-directional (однонаправленная аннотация)
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "person_id")
     private List<Phone> phoneList;
@@ -32,12 +32,16 @@ public class Person {
     @JoinColumn(name = "passport_id")
     private Passport passport;
 
+    // Bi-directional (двунаправленная)
+    // mappedBy - значение точно соответствует значению переменной в переменной person в Address
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "person", cascade = CascadeType.ALL)
+    private List<Address> addressList;
+
     public Person() { }
 
-    public Person(String firstName, String lastName, String address) {
+    public Person(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.address = address;
     }
 
     public int getId() {
@@ -64,12 +68,16 @@ public class Person {
         this.lastName = last_name;
     }
 
-    public String getAddress() {
-        return address;
+    public List<Address> getAddress() {
+        return addressList;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setAddress(List<Address> addressList) {
+
+        for (Address a : addressList) {
+            a.setPerson(this);
+        }
+        this.addressList = addressList;
     }
 
     public Passport getPassport() {
@@ -94,7 +102,7 @@ public class Person {
                 "id=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", address='" + address + '\'' +
+                //", addresses='" + addressList + '\'' +
                 ", passport=" + passport +
                 '}';
     }
