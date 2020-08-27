@@ -1,9 +1,14 @@
 package com.bouncer77.CourseProgressMaestro.controller;
 
+import com.bouncer77.CourseProgressMaestro.entity.Person;
+import com.bouncer77.CourseProgressMaestro.repository.PersonRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.*;
 import org.springframework.boot.autoconfigure.*;
 import org.springframework.stereotype.*;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * @author Kosenkov Ivan
@@ -14,10 +19,16 @@ import org.springframework.web.bind.annotation.*;
 @EnableAutoConfiguration
 public class SampleController {
 
+    @Autowired
+    PersonRepository personRepository;
+
     @RequestMapping("/")
     @ResponseBody
-    String home() {
-        return "Hello World!";
+    String home(String name) {
+
+        List<Person> personList = personRepository.findByFirstName(name);
+        Person anna = personList.get(0);
+        return anna.toString();
     }
 
     public static void main(String[] args) {
